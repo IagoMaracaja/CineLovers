@@ -10,15 +10,17 @@ import UIKit
 
 class UpcomingMovieTableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var movieGenre: UILabel!
+    @IBOutlet weak var movieName: UILabel!
+    @IBOutlet weak var releaseDate: UILabel!
+    @IBOutlet weak var moviePoster: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
 
 }

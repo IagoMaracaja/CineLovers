@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+struct Constants {
+    
+    struct ApiClient {
+        static let ApiUrlBase = "https://api.themoviedb.org/3"
+        static let ApiUrlImageBase = "http://image.tmdb.org/t/p"
+        static let ImageSizePath: String = "/w500"
+        
+        static let UpcomingMovieUrl = "/movie/upcoming"
+    }
+}

@@ -7,29 +7,41 @@
 //
 
 import UIKit
+import RxSwift
 
-class MovieDetailViewController: UIViewController {
+class MovieDetailViewController: UIViewController{
+    
+
+    var movie: Result!
+    
+    @IBOutlet weak var posterMovieIV: UIImageView!
+    @IBOutlet weak var movieTitleLabel: UILabel!
+    @IBOutlet weak var movieGenreLabel: UILabel!
+    @IBOutlet weak var releaseDateLabel: UILabel!
+    @IBOutlet weak var overviewLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        fillItemsOfView()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func fillItemsOfView(){
+        self.movieTitleLabel.text = self.movie.movieName.value
+        self.releaseDateLabel.text = self.movie.releaseDate.value
+        self.overviewLabel.text = self.movie.overview.value
+        
+        let url = getPosterMovieUrl(withUrl: self.movie.backdropPath.value)
+        
+        DispatchQueue.global().async {
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self.posterMovieIV.image = image
+                    }
+                }
+            }
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

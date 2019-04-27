@@ -9,6 +9,6 @@
 import Foundation
 import RxSwift
 
-protocol ApiServiceProtocol {
+protocol ApiService {
     func GetUpcomingMovie(pageAt page: Int?) -> Observable<MovieViewModel>
 }

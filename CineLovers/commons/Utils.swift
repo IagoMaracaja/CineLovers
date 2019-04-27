@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+func getPosterMovieUrl (withUrl url: String) -> URL {
+    let url = URL(string: Constants.ApiClient.ApiUrlImageBase
+        + Constants.ApiClient.ImageSizePath + url)!
+    return url
+}
