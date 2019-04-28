@@ -20,6 +20,7 @@ enum UpcomingMovieKeys: String, CodingKey {
     case page = "page"
     case totalPages = "total_pages"
     case movieId = "id"
+    case voteAverage = "vote_average"
 }
 
 struct MovieViewModel: Decodable {
@@ -44,6 +45,7 @@ struct Result:Decodable {
     var overview = Variable<String>("")
     var backdropPath:String?
     var movieId = Variable<Int>(0)
+    var voteAverage = Variable<Float>(0)
     
     init() {
         
@@ -59,6 +61,7 @@ struct Result:Decodable {
         self.movieId.value = try container.decode(Int.self, forKey: .movieId)
         self.overview.value = try container.decode(String.self, forKey: .overview)
         self.backdropPath = try container.decodeIfPresent(String.self, forKey: .backdropPath)
+        self.voteAverage.value = try container.decode(Float.self, forKey: .voteAverage)
     }
 }
 

@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CineLovers/ViewControllers/UpcomingMoviesViewController.swift"
-            timestampString = "578176196.535931"
+            timestampString = "578177103.9259731"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "69"
@@ -74,12 +74,12 @@
                   moduleName = "CineLovers"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iagoalbuquerque/Desktop/development/CineLovers/CineLovers/CineLovers/ViewControllers/MovieDetailViewController.swift"
-                  timestampString = "578176196.559307"
+                  timestampString = "578177104.118009"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "40"
                   endingLineNumber = "40"
-                  offsetFromSymbolStart = "60">
+                  offsetFromSymbolStart = "65">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -89,7 +89,7 @@
                   moduleName = "CineLovers"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iagoalbuquerque/Desktop/development/CineLovers/CineLovers/CineLovers/ViewControllers/MovieDetailViewController.swift"
-                  timestampString = "578176196.586063"
+                  timestampString = "578177104.121971"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "43"
@@ -106,45 +106,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CineLovers/ViewControllers/UpcomingMoviesViewController.swift"
-            timestampString = "578176196.536428"
+            timestampString = "578177103.926363"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "getUpcomingMovies()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CineLovers.UpcomingMoviesViewController.getUpcomingMovies() -&gt; ()"
-                  moduleName = "CineLovers"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/iagoalbuquerque/Desktop/development/CineLovers/CineLovers/CineLovers/ViewControllers/UpcomingMoviesViewController.swift"
-                  timestampString = "578176196.606015"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "79"
-                  endingLineNumber = "79"
-                  offsetFromSymbolStart = "56">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (CineLovers.MovieViewModel) -&gt; () in CineLovers.UpcomingMoviesViewController.getUpcomingMovies() -&gt; ()"
-                  moduleName = "CineLovers"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/iagoalbuquerque/Desktop/development/CineLovers/CineLovers/CineLovers/ViewControllers/UpcomingMoviesViewController.swift"
-                  timestampString = "578176196.621694"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "81"
-                  endingLineNumber = "81"
-                  offsetFromSymbolStart = "36">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

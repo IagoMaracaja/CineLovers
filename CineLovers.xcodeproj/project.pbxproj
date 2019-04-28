@@ -21,8 +21,6 @@
 		C3D21D482274F09C00BE0A9E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D21D472274F09C00BE0A9E /* Constants.swift */; };
 		C3D21D4A2274F1A600BE0A9E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D21D492274F1A600BE0A9E /* Utils.swift */; };
 		C3E4ADEC22750B4B00285DD6 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E4ADEB22750B4B00285DD6 /* ApiService.swift */; };
-		C3E4ADEE2275165B00285DD6 /* Alert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3E4ADED2275165B00285DD6 /* Alert.storyboard */; };
-		C3E4ADF0227516D100285DD6 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E4ADEF227516D100285DD6 /* AlertViewController.swift */; };
 		C3F1A0B5227118DA003821A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F1A0B4227118DA003821A7 /* AppDelegate.swift */; };
 		C3F1A0B7227118DA003821A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F1A0B6227118DA003821A7 /* ViewController.swift */; };
 		C3F1A0BD227118DA003821A7 /* CineLovers.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C3F1A0BB227118DA003821A7 /* CineLovers.xcdatamodeld */; };
@@ -65,8 +63,6 @@
 		C3D21D472274F09C00BE0A9E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C3D21D492274F1A600BE0A9E /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		C3E4ADEB22750B4B00285DD6 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
-		C3E4ADED2275165B00285DD6 /* Alert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
-		C3E4ADEF227516D100285DD6 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		C3F1A0B1227118DA003821A7 /* CineLovers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CineLovers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3F1A0B4227118DA003821A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3F1A0B6227118DA003821A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -142,7 +138,6 @@
 			children = (
 				C39AAC78227121DF0001C405 /* UpcomingMoviesViewController.swift */,
 				C3D21D402274D69F00BE0A9E /* MovieDetailViewController.swift */,
-				C3E4ADEF227516D100285DD6 /* AlertViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -152,7 +147,6 @@
 			children = (
 				C39AAC7B2271225E0001C405 /* UpcomingMovie.storyboard */,
 				C3D21D3E2274D61D00BE0A9E /* MovieDetail.storyboard */,
-				C3E4ADED2275165B00285DD6 /* Alert.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -372,7 +366,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3D21D3F2274D61D00BE0A9E /* MovieDetail.storyboard in Resources */,
-				C3E4ADEE2275165B00285DD6 /* Alert.storyboard in Resources */,
 				C3F1A0C2227118DA003821A7 /* LaunchScreen.storyboard in Resources */,
 				C39AAC7C2271225E0001C405 /* UpcomingMovie.storyboard in Resources */,
 				C3F1A0BF227118DA003821A7 /* Assets.xcassets in Resources */,
@@ -489,7 +482,6 @@
 				C3B3F7BA2276333F00A4CF1F /* MovieDetailViewModel.swift in Sources */,
 				C3D21D412274D69F00BE0A9E /* MovieDetailViewController.swift in Sources */,
 				C3D21D482274F09C00BE0A9E /* Constants.swift in Sources */,
-				C3E4ADF0227516D100285DD6 /* AlertViewController.swift in Sources */,
 				C39AAC7F227229650001C405 /* UpcomingMovieTableViewCell.swift in Sources */,
 				C3D21D4A2274F1A600BE0A9E /* Utils.swift in Sources */,
 				C39AAC8222722C560001C405 /* AppServeClient.swift in Sources */,

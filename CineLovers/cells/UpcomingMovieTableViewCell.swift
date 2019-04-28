@@ -11,7 +11,7 @@ import UIKit
 class UpcomingMovieTableViewCell: UITableViewCell {
 
     
-    @IBOutlet weak var movieGenre: UILabel!
+    @IBOutlet weak var movieAverage: UILabel!
     @IBOutlet weak var movieName: UILabel!
     @IBOutlet weak var releaseDate: UILabel!
     @IBOutlet weak var moviePoster: UIImageView!
@@ -23,7 +23,7 @@ class UpcomingMovieTableViewCell: UITableViewCell {
     }
 
     func setupView(withThisMovie movie : Result) {
-        self.movieGenre.text = "\(movie.movieGenre.value)"
+        self.movieAverage.text = "IMDb \(movie.voteAverage.value)"
         self.movieName.text = movie.movieName.value
         self.releaseDate.text = movie.releaseDate.value
         if ((movie.posterUrlString) != nil){

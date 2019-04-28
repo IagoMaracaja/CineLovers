@@ -107,7 +107,7 @@
                                                         <constraint firstAttribute="bottom" secondItem="7CH-pJ-8TO" secondAttribute="bottom" id="pY7-K5-UOU"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Action, Adventure" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wd9-Xd-r4A">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IMDb 5.5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wd9-Xd-r4A">
                                                     <rect key="frame" x="256" y="258.5" width="109" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="109" id="Eji-2g-Vuq"/>
@@ -141,7 +141,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <outlet property="movieGenre" destination="wd9-Xd-r4A" id="LRL-M9-u8h"/>
+                                            <outlet property="movieAverage" destination="wd9-Xd-r4A" id="LRL-M9-u8h"/>
                                             <outlet property="movieName" destination="C0p-ab-JmL" id="SqW-0c-6pE"/>
                                             <outlet property="moviePoster" destination="7CH-pJ-8TO" id="XLy-Jg-qhJ"/>
                                             <outlet property="releaseDate" destination="lU6-vw-Jga" id="K87-8u-r0X"/>

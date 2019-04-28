@@ -164,14 +164,6 @@ class UpcomingMoviesViewController: UIViewController, UITableViewDataSource, UIT
         return self.movieList.count
     }
     
-    func callAlertMessages(){
-        /*let storyboard: UIStoryboard = UIStoryboard(name: "Alert", bundle: nil)
-         let alertVc : AlertViewController = storyboard.instantiateViewController(withIdentifier: "alertViewController") as! AlertViewController
-         alertVc.modalPresentationStyle = .overCurrentContext
-         alertVc.alertMessageString = "There are no results to display, please try again."
-         self.present(alertVc, animated: true, completion: nil)*/
-    }
-    
     func showLoaging(){
         if (!self.activityIndicator.isAnimating){
             self.activityIndicator.startAnimating()
