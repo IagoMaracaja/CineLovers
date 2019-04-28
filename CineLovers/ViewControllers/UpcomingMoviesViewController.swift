@@ -9,9 +9,13 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import NVActivityIndicatorView
 
-class UpcomingMoviesViewController: UIViewController, UITableViewDelegate {
+class UpcomingMoviesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var activityIndicator: NVActivityIndicatorView!
+    
+    @IBOutlet weak var searchTF: UITextField!
     @IBOutlet weak var tableView: UITableView!
     var pageIndex = 1
     var totalPages = 1
@@ -19,6 +23,9 @@ class UpcomingMoviesViewController: UIViewController, UITableViewDelegate {
     
     let disposeBag = DisposeBag()
     var appServerClient: ApiService?
+    var movieList:[Result] = []
+    var filteredList: [Result] = []
+    var isSearchingMovie = Variable<Bool>(false)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,68 +34,83 @@ class UpcomingMoviesViewController: UIViewController, UITableViewDelegate {
         }
         self.customizeTableView()
         self.getUpcomingMovies()
+        self.searchObservable ()
+        
+        
+        
+    }
+   
+    @IBAction func editingChanged(_ sender: UITextField) {
+        
+        if sender.text?.count == 0 {
+            self.isSearchingMovie.value = false
+        } else {
+            self.isSearchingMovie.value = true
+        }
+    }
+    @IBAction func onSearchClick(_ sender: Any) {
+        isSearchingMovie.value = true
+        let text = self.searchTF.text?.lowercased()
+        self.filteredList = []
+        for movie in self.movieList {
+            let movieName = movie.movieName.value.lowercased()
+            if (movieName.range(of: text!) != nil){
+                filteredList.append(movie)
+            }
+        }
+        
+        self.tableView.reloadData()
         
     }
     
+    func searchObservable() {
+        
+        self.isSearchingMovie.asObservable().subscribe(onNext: {
+          value in
+            if !value {
+                self.tableView.reloadData()
+            }
+            
+        }).disposed(by: disposeBag)
+    }
+    
     func getUpcomingMovies(){
-        appServerClient?.GetUpcomingMovie(pageAt: pageIndex).subscribe(onNext: {
+        self.showLoaging()
+        appServerClient?.getUpcomingMovie(pageAt: pageIndex).subscribe(onNext: {
             movieResult in
-            let movies: Observable<[Result]> = Observable.just(movieResult.resultsJson)
-            self.bindTableView(with: movies)
+            self.hideLoading()
+            if(self.movieList.count == 0){
+                self.movieList = movieResult.resultsJson
+            } else {
+                self.movieList.append(contentsOf: movieResult.resultsJson)
+            }
             self.totalPages = movieResult.totalPages.value
-            self.totalItems = movieResult.resultsJson.count
-            print("We have a \(self.totalItems) items at this moment.")
+            self.totalItems = self.movieList.count
+            self.tableView.reloadData()
         }).disposed(by: disposeBag)
         
     }
     
     func customizeTableView(){
+        self.bindTableView()
         self.tableView.tableFooterView = UIView()
         self.tableView.separatorStyle = .none
+        self.tableView.contentInset = UIEdgeInsets.zero
+        
     }
     
-    func bindTableView (with movies: Observable<[Result]>){
-        movies.bind(to: tableView.rx.items(cellIdentifier: "UpcomingMovieTableViewCellId")) {
-            indexpath, movie, cell in
-            if let thisCell = cell as? UpcomingMovieTableViewCell {
-                thisCell.movieGenre.text = "\(movie.movieGenre.value)"
-                thisCell.movieName.text = movie.movieName.value
-                thisCell.releaseDate.text = movie.releaseDate.value
-                let url = getPosterMovieUrl(withUrl: movie.posterUrlString.value)
-                DispatchQueue.global().async {
-                    if let data = try? Data(contentsOf: url) {
-                        if let image = UIImage(data: data) {
-                            DispatchQueue.main.async {
-                                thisCell.moviePoster.image = image
-                            }
-                        }
-                    }
-                }
-            }
-        }.disposed(by: disposeBag)
-        
+    func bindTableView (){
         self.tableView.rx.willDisplayCell.subscribe(onNext: {
             cell, rowAtIndexPath in
             if (rowAtIndexPath.row + 1 == self.totalItems){
                 if (self.pageIndex < self.totalPages){
                     self.pageIndex += 1
-                    //self.getUpcomingMovies()
+                    self.getUpcomingMovies()
                 }
             }
         }).disposed(by: disposeBag)
-        
-        self.tableView.rx.modelSelected(Result.self).subscribe(onNext: {
-            movie in
-            let storyboard: UIStoryboard = UIStoryboard(name: "MovieDetail", bundle: nil)
-            let movieDetail : MovieDetailViewController = storyboard.instantiateViewController(withIdentifier: "movieDetailViewController") as! MovieDetailViewController
-            movieDetail.movie = movie
-            
-            
-            self.navigationController?.pushViewController(movieDetail, animated: true)
-        }).disposed(by: disposeBag)
-        
-        
         self.tableView.rx.setDelegate(self).disposed(by: disposeBag)
+        self.tableView.rx.setDataSource(self).disposed(by: disposeBag)
        
     }
     
@@ -102,12 +124,64 @@ class UpcomingMoviesViewController: UIViewController, UITableViewDelegate {
         cell.selectionStyle = .none
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "MovieDetail", bundle: nil)
+        let movieDetail : MovieDetailViewController = storyboard.instantiateViewController(withIdentifier: "movieDetailViewController") as! MovieDetailViewController
+        var movie: Result
+        if (isSearchingMovie.value) {
+            movie = self.filteredList[indexPath.row]
+        }else{
+            movie = self.movieList[indexPath.row]
+        }
+        movieDetail.movie = movie
+        
+        
+        self.navigationController?.pushViewController(movieDetail, animated: true)
+    }
+    
+    
+    // MARK: UITableViewDataSource Methods
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell:UpcomingMovieTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "UpcomingMovieTableViewCellId") as! UpcomingMovieTableViewCell!;
+        
+        var movie: Result
+        
+        if (isSearchingMovie.value) {
+            movie = self.filteredList[indexPath.row]
+        }else{
+             movie = self.movieList[indexPath.row]
+        }
+        
+        cell.setupView(withThisMovie: movie)
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if (isSearchingMovie.value){
+            return self.filteredList.count
+        }
+        return self.movieList.count
+    }
+    
     func callAlertMessages(){
         /*let storyboard: UIStoryboard = UIStoryboard(name: "Alert", bundle: nil)
          let alertVc : AlertViewController = storyboard.instantiateViewController(withIdentifier: "alertViewController") as! AlertViewController
          alertVc.modalPresentationStyle = .overCurrentContext
          alertVc.alertMessageString = "There are no results to display, please try again."
          self.present(alertVc, animated: true, completion: nil)*/
+    }
+    
+    func showLoaging(){
+        if (!self.activityIndicator.isAnimating){
+            self.activityIndicator.startAnimating()
+        }
+    }
+    
+    func hideLoading(){
+        if(self.activityIndicator.isAnimating){
+            self.activityIndicator.stopAnimating()
+        }
     }
     
 

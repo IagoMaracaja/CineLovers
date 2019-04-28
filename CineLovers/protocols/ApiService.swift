@@ -10,5 +10,6 @@ import Foundation
 import RxSwift
 
 protocol ApiService {
-    func GetUpcomingMovie(pageAt page: Int?) -> Observable<MovieViewModel>
+    func getUpcomingMovie(pageAt page: Int?) -> Observable<MovieViewModel>
+    func getMovieDetail (movieId id: Int) -> Observable<MovieDetailViewModel>
 }

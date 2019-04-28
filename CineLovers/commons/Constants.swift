@@ -16,5 +16,6 @@ struct Constants {
         static let ImageSizePath: String = "/w500"
         
         static let UpcomingMovieUrl = "/movie/upcoming"
+        static let MovieDetailUrl = "/movie/"
     }
 }

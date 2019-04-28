@@ -15,6 +15,7 @@
 		C39AAC7C2271225E0001C405 /* UpcomingMovie.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C39AAC7B2271225E0001C405 /* UpcomingMovie.storyboard */; };
 		C39AAC7F227229650001C405 /* UpcomingMovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39AAC7E227229650001C405 /* UpcomingMovieTableViewCell.swift */; };
 		C39AAC8222722C560001C405 /* AppServeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39AAC8122722C560001C405 /* AppServeClient.swift */; };
+		C3B3F7BA2276333F00A4CF1F /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B3F7B92276333F00A4CF1F /* MovieDetailViewModel.swift */; };
 		C3D21D3F2274D61D00BE0A9E /* MovieDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D21D3E2274D61D00BE0A9E /* MovieDetail.storyboard */; };
 		C3D21D412274D69F00BE0A9E /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D21D402274D69F00BE0A9E /* MovieDetailViewController.swift */; };
 		C3D21D482274F09C00BE0A9E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D21D472274F09C00BE0A9E /* Constants.swift */; };
@@ -58,6 +59,7 @@
 		C39AAC7B2271225E0001C405 /* UpcomingMovie.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UpcomingMovie.storyboard; sourceTree = "<group>"; };
 		C39AAC7E227229650001C405 /* UpcomingMovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMovieTableViewCell.swift; sourceTree = "<group>"; };
 		C39AAC8122722C560001C405 /* AppServeClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServeClient.swift; sourceTree = "<group>"; };
+		C3B3F7B92276333F00A4CF1F /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
 		C3D21D3E2274D61D00BE0A9E /* MovieDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovieDetail.storyboard; sourceTree = "<group>"; };
 		C3D21D402274D69F00BE0A9E /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		C3D21D472274F09C00BE0A9E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				C305325A22722E2200D37345 /* MovieViewModel.swift */,
+				C3B3F7B92276333F00A4CF1F /* MovieDetailViewModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -437,12 +440,14 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CineLovers/Pods-CineLovers-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
@@ -481,6 +486,7 @@
 				C39AAC79227121DF0001C405 /* UpcomingMoviesViewController.swift in Sources */,
 				C3F1A0BD227118DA003821A7 /* CineLovers.xcdatamodeld in Sources */,
 				C3E4ADEC22750B4B00285DD6 /* ApiService.swift in Sources */,
+				C3B3F7BA2276333F00A4CF1F /* MovieDetailViewModel.swift in Sources */,
 				C3D21D412274D69F00BE0A9E /* MovieDetailViewController.swift in Sources */,
 				C3D21D482274F09C00BE0A9E /* Constants.swift in Sources */,
 				C3E4ADF0227516D100285DD6 /* AlertViewController.swift in Sources */,

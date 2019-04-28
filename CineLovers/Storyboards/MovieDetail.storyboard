@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gZ2-d6-FuI">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="not_found" translatesAutoresizingMaskIntoConstraints="NO" id="gZ2-d6-FuI">
                                 <rect key="frame" x="0.0" y="64" width="375" height="269"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="269" id="fDp-3I-b63"/>
@@ -68,12 +68,21 @@
                                 <color key="textColor" red="0.97931868649999998" green="0.97931868649999998" blue="0.97931868649999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="afb-H9-KuD" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                                <rect key="frame" x="137" y="273" width="100" height="120"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="Rr3-EV-FtO"/>
+                                    <constraint firstAttribute="width" constant="100" id="cKy-im-KNm"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="gZ2-d6-FuI" firstAttribute="trailing" secondItem="PU4-vg-nHh" secondAttribute="trailing" id="0z8-3l-Ttb"/>
                             <constraint firstItem="adB-21-o39" firstAttribute="top" secondItem="gZ2-d6-FuI" secondAttribute="bottom" id="2cW-sF-B22"/>
                             <constraint firstItem="6As-ln-Yaf" firstAttribute="top" secondItem="B0p-vS-F7h" secondAttribute="bottom" constant="3" id="2cc-pO-J68"/>
+                            <constraint firstItem="afb-H9-KuD" firstAttribute="centerX" secondItem="hQ1-2L-Xrd" secondAttribute="centerX" id="Aj0-7C-2OT"/>
                             <constraint firstItem="Xcm-EE-foB" firstAttribute="leading" secondItem="PU4-vg-nHh" secondAttribute="leading" constant="10" id="FSM-d8-ETY"/>
                             <constraint firstItem="gZ2-d6-FuI" firstAttribute="leading" secondItem="PU4-vg-nHh" secondAttribute="leading" id="Fkf-re-B77"/>
                             <constraint firstItem="PU4-vg-nHh" firstAttribute="bottom" secondItem="Xcm-EE-foB" secondAttribute="bottom" constant="15" id="MOO-ba-bs6"/>
@@ -81,6 +90,7 @@
                             <constraint firstItem="adB-21-o39" firstAttribute="leading" secondItem="B0p-vS-F7h" secondAttribute="trailing" constant="10" id="Oqg-hh-LGR"/>
                             <constraint firstItem="B0p-vS-F7h" firstAttribute="top" secondItem="gZ2-d6-FuI" secondAttribute="bottom" constant="8" id="RgE-Rk-jEV"/>
                             <constraint firstItem="PU4-vg-nHh" firstAttribute="trailing" secondItem="Xcm-EE-foB" secondAttribute="trailing" constant="10" id="SAP-0e-lEh"/>
+                            <constraint firstItem="afb-H9-KuD" firstAttribute="centerY" secondItem="hQ1-2L-Xrd" secondAttribute="centerY" id="TIw-Le-4J7"/>
                             <constraint firstItem="6As-ln-Yaf" firstAttribute="leading" secondItem="PU4-vg-nHh" secondAttribute="leading" constant="10" id="YqG-cf-ZmT"/>
                             <constraint firstItem="adB-21-o39" firstAttribute="trailing" secondItem="PU4-vg-nHh" secondAttribute="trailing" id="c2H-wR-v0D"/>
                             <constraint firstItem="B0p-vS-F7h" firstAttribute="leading" secondItem="PU4-vg-nHh" secondAttribute="leading" constant="10" id="igZ-Nw-OJr"/>
@@ -91,6 +101,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="6MW-o7-avw"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="afb-H9-KuD" id="QNi-tM-zyJ"/>
                         <outlet property="movieGenreLabel" destination="6As-ln-Yaf" id="e4e-1U-R2b"/>
                         <outlet property="movieTitleLabel" destination="B0p-vS-F7h" id="EZe-sN-QrB"/>
                         <outlet property="overviewLabel" destination="Xcm-EE-foB" id="wcO-Vu-Inz"/>
@@ -126,4 +137,7 @@
             <point key="canvasLocation" x="-492" y="-43"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="not_found" width="852" height="480"/>
+    </resources>
 </document>

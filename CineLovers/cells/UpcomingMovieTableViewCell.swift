@@ -22,5 +22,25 @@ class UpcomingMovieTableViewCell: UITableViewCell {
         
     }
 
+    func setupView(withThisMovie movie : Result) {
+        self.movieGenre.text = "\(movie.movieGenre.value)"
+        self.movieName.text = movie.movieName.value
+        self.releaseDate.text = movie.releaseDate.value
+        if ((movie.posterUrlString) != nil){
+            let url = getPosterMovieUrl(withUrl: movie.posterUrlString!)
+            DispatchQueue.global().async {
+                if let data = try? Data(contentsOf: url) {
+                    if let image = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            self.moviePoster.image = image
+                        }
+                    }
+                }
+            }
+        } else {
+            self.moviePoster.image = UIImage(named: "not_found.png")
+        }
+        
+    }
 
 }

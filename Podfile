@@ -10,6 +10,7 @@ target 'CineLovers' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'Alamofire'
+  pod 'NVActivityIndicatorView'
 
   target 'CineLoversTests' do
     inherit! :search_paths

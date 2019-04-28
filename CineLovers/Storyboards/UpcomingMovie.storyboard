@@ -27,9 +27,12 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="6th-0j-W5D"/>
                                         </constraints>
-                                        <color key="textColor" red="0.97931868649999998" green="0.97931868649999998" blue="0.97931868649999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="editingChanged:" destination="7Qg-k3-tNO" eventType="editingChanged" id="yjL-Qa-ZNf"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVC-DF-SMr">
                                         <rect key="frame" x="305" y="10" width="60" height="30"/>
@@ -41,6 +44,9 @@
                                         <state key="normal" title="Search">
                                             <color key="titleColor" red="0.97931868649999998" green="0.97931868649999998" blue="0.97931868649999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onSearchClick:" destination="7Qg-k3-tNO" eventType="touchUpInside" id="Yhq-WF-zcT"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -67,7 +73,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lyv-xk-LyQ">
                                                     <rect key="frame" x="0.0" y="28" width="375" height="230.5"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7CH-pJ-8TO">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="not_found" translatesAutoresizingMaskIntoConstraints="NO" id="7CH-pJ-8TO">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="230.5"/>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Zt-2s-BT0">
@@ -143,21 +149,33 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kiv-P2-1ck" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                                <rect key="frame" x="137" y="273" width="100" height="120"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Oh4-El-bkU"/>
+                                    <constraint firstAttribute="height" constant="120" id="QmI-UO-hiW"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="sH4-rV-L7m" firstAttribute="leading" secondItem="dyH-Ev-yCf" secondAttribute="leading" id="TfC-q5-Tap"/>
+                            <constraint firstItem="Kiv-P2-1ck" firstAttribute="centerY" secondItem="jVz-cI-HCs" secondAttribute="centerY" id="VLl-KV-Kse"/>
                             <constraint firstItem="sH4-rV-L7m" firstAttribute="trailing" secondItem="dyH-Ev-yCf" secondAttribute="trailing" id="VmY-tJ-HFh"/>
                             <constraint firstItem="jgp-hS-TGf" firstAttribute="trailing" secondItem="dyH-Ev-yCf" secondAttribute="trailing" id="anr-A2-lcp"/>
                             <constraint firstItem="sH4-rV-L7m" firstAttribute="top" secondItem="jVz-cI-HCs" secondAttribute="top" constant="60" id="bbG-k3-HlC"/>
                             <constraint firstItem="jgp-hS-TGf" firstAttribute="leading" secondItem="dyH-Ev-yCf" secondAttribute="leading" id="dzU-Te-jxa"/>
                             <constraint firstItem="dyH-Ev-yCf" firstAttribute="bottom" secondItem="jgp-hS-TGf" secondAttribute="bottom" id="eP6-Yg-yU2"/>
                             <constraint firstItem="jgp-hS-TGf" firstAttribute="top" secondItem="sH4-rV-L7m" secondAttribute="bottom" id="gCp-Ah-ZQo"/>
+                            <constraint firstItem="Kiv-P2-1ck" firstAttribute="centerX" secondItem="jVz-cI-HCs" secondAttribute="centerX" id="wvU-aM-emU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dyH-Ev-yCf"/>
                     </view>
                     <navigationItem key="navigationItem" title="CineLovers" id="fKF-br-qLd"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="Kiv-P2-1ck" id="358-Ph-J63"/>
+                        <outlet property="searchTF" destination="K3s-wJ-O5g" id="LYK-N9-Z7n"/>
                         <outlet property="tableView" destination="jgp-hS-TGf" id="q4Y-zA-Gly"/>
                     </connections>
                 </viewController>
@@ -189,4 +207,7 @@
             <point key="canvasLocation" x="-620" y="136"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="not_found" width="852" height="480"/>
+    </resources>
 </document>
