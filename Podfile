@@ -11,6 +11,8 @@ target 'CineLovers' do
   pod 'RxCocoa'
   pod 'Alamofire'
   pod 'NVActivityIndicatorView'
+  pod 'MaterialComponents/Snackbar'
+  pod 'MaterialComponents/Snackbar+ColorThemer'
 
   target 'CineLoversTests' do
     inherit! :search_paths

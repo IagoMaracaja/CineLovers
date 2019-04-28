@@ -1,5 +1,47 @@
 PODS:
   - Alamofire (4.7.3)
+  - MaterialComponents/AnimationTiming (65.0.0)
+  - MaterialComponents/Buttons (65.0.0):
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/private/Shapes
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+    - MDFInternationalization
+    - MDFTextAccessibility
+  - MaterialComponents/Ink (65.0.0):
+    - MaterialComponents/private/Math
+  - MaterialComponents/OverlayWindow (65.0.0):
+    - MaterialComponents/private/Application
+  - MaterialComponents/private/Application (65.0.0)
+  - MaterialComponents/private/KeyboardWatcher (65.0.0):
+    - MaterialComponents/private/Application
+  - MaterialComponents/private/Math (65.0.0)
+  - MaterialComponents/private/Overlay (65.0.0)
+  - MaterialComponents/private/Shapes (65.0.0):
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowLayer
+  - MaterialComponents/schemes/Color (65.0.0)
+  - MaterialComponents/ShadowElevations (65.0.0)
+  - MaterialComponents/ShadowLayer (65.0.0):
+    - MaterialComponents/ShadowElevations
+  - MaterialComponents/Snackbar (65.0.0):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/Buttons
+    - MaterialComponents/OverlayWindow
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/KeyboardWatcher
+    - MaterialComponents/private/Overlay
+    - MaterialComponents/Typography
+  - "MaterialComponents/Snackbar+ColorThemer (65.0.0)":
+    - MaterialComponents/schemes/Color
+    - MaterialComponents/Snackbar
+  - MaterialComponents/Typography (65.0.0):
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/Math
+  - MDFInternationalization (1.1.0)
+  - MDFTextAccessibility (1.2.0)
   - NVActivityIndicatorView (4.4.0):
     - NVActivityIndicatorView/Presenter (= 4.4.0)
   - NVActivityIndicatorView/Presenter (4.4.0)
@@ -9,6 +51,8 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - MaterialComponents/Snackbar
+  - "MaterialComponents/Snackbar+ColorThemer"
   - NVActivityIndicatorView
   - RxCocoa
   - RxSwift
@@ -16,16 +60,22 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - MaterialComponents
+    - MDFInternationalization
+    - MDFTextAccessibility
     - NVActivityIndicatorView
     - RxCocoa
     - RxSwift
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  MaterialComponents: ea21a99bd4da688f9becf8c3e9416016343cbe32
+  MDFInternationalization: b5b8626628abf026e630e5ebaeee563037712cbb
+  MDFTextAccessibility: 94098925e0853551c5a311ce7c1ecefbe297cdb6
   NVActivityIndicatorView: ec7440a57af2450319d3a4181cca7da6fc127064
   RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
   RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
 
-PODFILE CHECKSUM: e478516fd58ea830d00001a2f6d7844109cb13fc
+PODFILE CHECKSUM: 204825b93631c6df80c57c4cfa45f4937b786935
 
 COCOAPODS: 1.6.0.beta.1

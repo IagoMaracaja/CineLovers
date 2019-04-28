@@ -10,6 +10,8 @@ import UIKit
 import RxSwift
 import RxCocoa
 import NVActivityIndicatorView
+import MaterialComponents.MaterialSnackbar
+import MaterialComponents.MaterialSnackbar_ColorThemer
 
 class UpcomingMoviesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -27,6 +29,8 @@ class UpcomingMoviesViewController: UIViewController, UITableViewDataSource, UIT
     var filteredList: [Result] = []
     var isSearchingMovie = Variable<Bool>(false)
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if (appServerClient == nil){
@@ -40,6 +44,11 @@ class UpcomingMoviesViewController: UIViewController, UITableViewDataSource, UIT
         
     }
    
+    
+    @IBAction func backToTop(_ sender: Any) {
+        self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableViewScrollPosition.top, animated: true)
+    }
+    
     @IBAction func editingChanged(_ sender: UITextField) {
         
         if sender.text?.count == 0 {
@@ -50,17 +59,33 @@ class UpcomingMoviesViewController: UIViewController, UITableViewDataSource, UIT
     }
     @IBAction func onSearchClick(_ sender: Any) {
         isSearchingMovie.value = true
-        let text = self.searchTF.text?.lowercased()
-        self.filteredList = []
-        for movie in self.movieList {
-            let movieName = movie.movieName.value.lowercased()
-            if (movieName.range(of: text!) != nil){
-                filteredList.append(movie)
+        var text = self.searchTF.text?.lowercased()
+        if (text?.isEmpty)!{
+            showMessage(withMessage: "The search cannot be empty.")
+            isSearchingMovie.value = false
+        } else {
+            text = self.prepareStringSearch(thisString: text!)
+            self.filteredList = []
+            for movie in self.movieList {
+                let movieName = movie.movieName.value.lowercased()
+                if (movieName.range(of: text!) != nil){
+                    filteredList.append(movie)
+                }
             }
+            
+            self.tableView.reloadData()
         }
         
-        self.tableView.reloadData()
-        
+    }
+    
+    func prepareStringSearch(thisString string: String) -> String {
+        var formattedString = ""
+        let arrayOrWords = string.split(separator: " ")
+        for str in arrayOrWords {
+            formattedString += str + " "
+        }
+        formattedString = formattedString.trimmingCharacters(in: .whitespaces)
+        return formattedString
     }
     
     func searchObservable() {
@@ -120,6 +145,10 @@ class UpcomingMoviesViewController: UIViewController, UITableViewDataSource, UIT
         return 282
     }
     
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 282
+    }
+    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.selectionStyle = .none
     }
@@ -174,6 +203,19 @@ class UpcomingMoviesViewController: UIViewController, UITableViewDataSource, UIT
         if(self.activityIndicator.isAnimating){
             self.activityIndicator.stopAnimating()
         }
+    }
+    
+    func showMessage(withMessage message: String) {
+        
+        let colorScheme = MDCSemanticColorScheme()
+        colorScheme.surfaceColor = .black
+        colorScheme.onSurfaceColor = .yellow
+        MDCSnackbarColorThemer.applySemanticColorScheme(colorScheme)
+ 
+        let snackbarMessage = MDCSnackbarMessage()
+        snackbarMessage.text = message
+       
+        MDCSnackbarManager.show(snackbarMessage)
     }
     
 

@@ -38,27 +38,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CineLovers/ViewControllers/UpcomingMoviesViewController.swift"
-            timestampString = "578177103.9259731"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "searchObservable()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CineLovers/ViewControllers/MovieDetailViewController.swift"
-            timestampString = "578175143.324497"
+            timestampString = "578184123.470203"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
@@ -74,7 +58,7 @@
                   moduleName = "CineLovers"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iagoalbuquerque/Desktop/development/CineLovers/CineLovers/CineLovers/ViewControllers/MovieDetailViewController.swift"
-                  timestampString = "578177104.118009"
+                  timestampString = "578184123.496897"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "40"
@@ -89,7 +73,7 @@
                   moduleName = "CineLovers"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iagoalbuquerque/Desktop/development/CineLovers/CineLovers/CineLovers/ViewControllers/MovieDetailViewController.swift"
-                  timestampString = "578177104.121971"
+                  timestampString = "578184123.519434"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "43"
@@ -97,22 +81,6 @@
                   offsetFromSymbolStart = "39">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CineLovers/ViewControllers/UpcomingMoviesViewController.swift"
-            timestampString = "578177103.926363"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "getUpcomingMovies()"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

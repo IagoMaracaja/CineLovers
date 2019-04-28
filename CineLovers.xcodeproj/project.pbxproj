@@ -16,6 +16,8 @@
 		C39AAC7F227229650001C405 /* UpcomingMovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39AAC7E227229650001C405 /* UpcomingMovieTableViewCell.swift */; };
 		C39AAC8222722C560001C405 /* AppServeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39AAC8122722C560001C405 /* AppServeClient.swift */; };
 		C3B3F7BA2276333F00A4CF1F /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B3F7B92276333F00A4CF1F /* MovieDetailViewModel.swift */; };
+		C3B3F7BD2276660000A4CF1F /* MainScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = C3B3F7BC2276660000A4CF1F /* MainScreen.png */; };
+		C3B3F7BF2276664300A4CF1F /* MovieDetailScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = C3B3F7BE2276664200A4CF1F /* MovieDetailScreen.png */; };
 		C3D21D3F2274D61D00BE0A9E /* MovieDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3D21D3E2274D61D00BE0A9E /* MovieDetail.storyboard */; };
 		C3D21D412274D69F00BE0A9E /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D21D402274D69F00BE0A9E /* MovieDetailViewController.swift */; };
 		C3D21D482274F09C00BE0A9E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D21D472274F09C00BE0A9E /* Constants.swift */; };
@@ -58,6 +60,8 @@
 		C39AAC7E227229650001C405 /* UpcomingMovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMovieTableViewCell.swift; sourceTree = "<group>"; };
 		C39AAC8122722C560001C405 /* AppServeClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServeClient.swift; sourceTree = "<group>"; };
 		C3B3F7B92276333F00A4CF1F /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
+		C3B3F7BC2276660000A4CF1F /* MainScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainScreen.png; sourceTree = "<group>"; };
+		C3B3F7BE2276664200A4CF1F /* MovieDetailScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MovieDetailScreen.png; sourceTree = "<group>"; };
 		C3D21D3E2274D61D00BE0A9E /* MovieDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovieDetail.storyboard; sourceTree = "<group>"; };
 		C3D21D402274D69F00BE0A9E /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		C3D21D472274F09C00BE0A9E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -167,6 +171,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		C3B3F7BB2276657600A4CF1F /* screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				C3B3F7BC2276660000A4CF1F /* MainScreen.png */,
+				C3B3F7BE2276664200A4CF1F /* MovieDetailScreen.png */,
+			);
+			path = screenshots;
+			sourceTree = "<group>";
+		};
 		C3D21D432274E67E00BE0A9E /* protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +222,7 @@
 		C3F1A0B3227118DA003821A7 /* CineLovers */ = {
 			isa = PBXGroup;
 			children = (
+				C3B3F7BB2276657600A4CF1F /* screenshots */,
 				C3D21D462274F07300BE0A9E /* commons */,
 				C3D21D432274E67E00BE0A9E /* protocols */,
 				C305325922722E1100D37345 /* model */,
@@ -365,8 +379,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3B3F7BD2276660000A4CF1F /* MainScreen.png in Resources */,
 				C3D21D3F2274D61D00BE0A9E /* MovieDetail.storyboard in Resources */,
 				C3F1A0C2227118DA003821A7 /* LaunchScreen.storyboard in Resources */,
+				C3B3F7BF2276664300A4CF1F /* MovieDetailScreen.png in Resources */,
 				C39AAC7C2271225E0001C405 /* UpcomingMovie.storyboard in Resources */,
 				C3F1A0BF227118DA003821A7 /* Assets.xcassets in Resources */,
 			);
@@ -433,6 +449,9 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CineLovers/Pods-CineLovers-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -440,6 +459,9 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",

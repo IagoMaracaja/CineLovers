@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sH4-rV-L7m">
-                                <rect key="frame" x="0.0" y="60" width="375" height="55"/>
+                                <rect key="frame" x="0.0" y="65" width="375" height="55"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K3s-wJ-O5g">
                                         <rect key="frame" x="10" y="10" width="285" height="30"/>
@@ -60,7 +60,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jgp-hS-TGf">
-                                <rect key="frame" x="0.0" y="115" width="375" height="552"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="UpcomingMovieTableViewCellId" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UpcomingMovieTableViewCellId" rowHeight="282" id="8Aa-vM-ezG" customClass="UpcomingMovieTableViewCell" customModule="CineLovers" customModuleProvider="target">
@@ -157,6 +157,27 @@
                                     <constraint firstAttribute="height" constant="120" id="QmI-UO-hiW"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nji-Uc-Wty">
+                                <rect key="frame" x="325" y="617" width="40" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQN-RM-qC1">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <state key="normal" title="Button" image="up-arrow"/>
+                                        <connections>
+                                            <action selector="backToTop:" destination="7Qg-k3-tNO" eventType="touchUpInside" id="Ini-cM-LQm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="BQN-RM-qC1" secondAttribute="bottom" id="1eI-OZ-Ecv"/>
+                                    <constraint firstItem="BQN-RM-qC1" firstAttribute="top" secondItem="nji-Uc-Wty" secondAttribute="top" id="7ej-bB-of8"/>
+                                    <constraint firstItem="BQN-RM-qC1" firstAttribute="leading" secondItem="nji-Uc-Wty" secondAttribute="leading" id="8mo-k1-yM4"/>
+                                    <constraint firstAttribute="trailing" secondItem="BQN-RM-qC1" secondAttribute="trailing" id="Dvv-EK-rdK"/>
+                                    <constraint firstAttribute="height" constant="40" id="kGS-Px-bUS"/>
+                                    <constraint firstAttribute="width" constant="40" id="qWD-r8-2ZX"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -164,10 +185,12 @@
                             <constraint firstItem="Kiv-P2-1ck" firstAttribute="centerY" secondItem="jVz-cI-HCs" secondAttribute="centerY" id="VLl-KV-Kse"/>
                             <constraint firstItem="sH4-rV-L7m" firstAttribute="trailing" secondItem="dyH-Ev-yCf" secondAttribute="trailing" id="VmY-tJ-HFh"/>
                             <constraint firstItem="jgp-hS-TGf" firstAttribute="trailing" secondItem="dyH-Ev-yCf" secondAttribute="trailing" id="anr-A2-lcp"/>
-                            <constraint firstItem="sH4-rV-L7m" firstAttribute="top" secondItem="jVz-cI-HCs" secondAttribute="top" constant="60" id="bbG-k3-HlC"/>
+                            <constraint firstItem="sH4-rV-L7m" firstAttribute="top" secondItem="jVz-cI-HCs" secondAttribute="top" constant="65" id="bbG-k3-HlC"/>
+                            <constraint firstItem="dyH-Ev-yCf" firstAttribute="trailing" secondItem="nji-Uc-Wty" secondAttribute="trailing" constant="10" id="cFL-FH-Jk8"/>
                             <constraint firstItem="jgp-hS-TGf" firstAttribute="leading" secondItem="dyH-Ev-yCf" secondAttribute="leading" id="dzU-Te-jxa"/>
                             <constraint firstItem="dyH-Ev-yCf" firstAttribute="bottom" secondItem="jgp-hS-TGf" secondAttribute="bottom" id="eP6-Yg-yU2"/>
                             <constraint firstItem="jgp-hS-TGf" firstAttribute="top" secondItem="sH4-rV-L7m" secondAttribute="bottom" id="gCp-Ah-ZQo"/>
+                            <constraint firstItem="dyH-Ev-yCf" firstAttribute="bottom" secondItem="nji-Uc-Wty" secondAttribute="bottom" constant="10" id="qkd-yx-01G"/>
                             <constraint firstItem="Kiv-P2-1ck" firstAttribute="centerX" secondItem="jVz-cI-HCs" secondAttribute="centerX" id="wvU-aM-emU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dyH-Ev-yCf"/>
@@ -209,5 +232,6 @@
     </scenes>
     <resources>
         <image name="not_found" width="852" height="480"/>
+        <image name="up-arrow" width="64" height="64"/>
     </resources>
 </document>
